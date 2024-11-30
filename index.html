@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snake Game</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        height: 100vh;
+        background: url("https://img.freepik.com/free-vector/park-with-path-foreground_1308-30954.jpg?t=st=1731675187~exp=1731678787~hmac=8b87cd4f0e59af1b90712c52750cef581f7b430af0b9d71b61ff3b12591c1799&w=1380")
+          no-repeat center center fixed;
+        background-size: cover;
+        color: #fff;
+      }
+
+      h1 {
+        margin: 10px 0;
+        font-size: 2em;
+        text-shadow: 2px 2px 5px #000;
+      }
+
+      .game-container {
+        display: grid;
+        grid-template-rows: repeat(20, 25px);
+        grid-template-columns: repeat(20, 25px);
+        gap: 1px;
+        background-color: rgba(0, 0, 0, 0.8);
+        border: 5px solid #fff;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Softer and more blurred shadow */
+        border-radius: 10px; /* Optional for rounded edges */
+      }
+
+      .cell {
+        width: 25px;
+        height: 25px;
+      }
+
+      .snake {
+        background: linear-gradient(45deg, #00ff00, #008000);
+        border: 1px solid #006600;
+      }
+
+      .food {
+        background: radial-gradient(circle, #ff0000, #800000);
+        border: 1px solid #800000;
+        border-radius: 50%;
+      }
+
+      .controls {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #reset-btn {
+        padding: 10px 20px;
+        font-size: 1em;
+        border: none;
+        border-radius: 5px;
+        background-color: #ff5722;
+        color: #fff;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      #reset-btn:hover {
+        background-color: #e64a19;
+      }
+
+      #score {
+        font-size: 1.2em;
+        margin-top: 10px;
+        text-shadow: 2px 2px 4px #000;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Snake Game</h1>
+    <div class="game-container"></div>
+    <div class="controls">
+      <button id="reset-btn">Restart Game</button>
+      <p>Score: <span id="score">0</span></p>
+    </div>
+    <script src="snake.js"></script>
+  </body>
+</html>
